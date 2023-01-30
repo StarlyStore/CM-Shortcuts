@@ -23,3 +23,7 @@ dependencies {
     // OTHER DEPENDENCIES
     compileOnly "net.starly.core:ST-Core:1.5.5"
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
