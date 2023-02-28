@@ -12,7 +12,7 @@ public class BoilerPlateMain extends JavaPlugin {
         // DEPENDENCY
         if (Bukkit.getPluginManager().getPlugin("ST-Core") == null) {
             Bukkit.getLogger().warning("[" + getName() + "] ST-Core 플러그인이 적용되지 않았습니다! 플러그인을 비활성화합니다.");
-            Bukkit.getLogger().warning("[" + getName() + "] 다운로드 링크 : §fhttp://starly.kr/discord");
+            Bukkit.getLogger().warning("[" + getName() + "] 다운로드 링크 : http://starly.kr/discord");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
