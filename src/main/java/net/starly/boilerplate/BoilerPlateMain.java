@@ -1,23 +1,23 @@
 package net.starly.boilerplate;
 
 import net.starly.core.bstats.Metrics;
-import org.bukkit.Bukkit;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BoilerPlateMain extends JavaPlugin {
-    private static JavaPlugin plugin;
+    private static JavaPlugin instance;
 
     @Override
     public void onEnable() {
         // DEPENDENCY
-        if (Bukkit.getPluginManager().getPlugin("ST-Core") == null || !Bukkit.getPluginManager().getPlugin("ST-Core").isEnabled()) {
-            Bukkit.getLogger().warning("[" + getName() + "] ST-Core 플러그인이 적용되지 않았습니다! 플러그인을 비활성화합니다.");
-            Bukkit.getLogger().warning("[" + getName() + "] 다운로드 링크 : http://starly.kr/discord");
-            Bukkit.getPluginManager().disablePlugin(this);
+        if (!isPluginEnabled("ST-Core")) {
+            getServer().getLogger().warning("[" + getName() + "] ST-Core 플러그인이 적용되지 않았습니다! 플러그인을 비활성화합니다.");
+            getServer().getLogger().warning("[" + getName() + "] 다운로드 링크 : http://starly.kr/discord");
+            getServer().getPluginManager().disablePlugin(this);
             return;
         }
 
-        plugin = this;
+        instance = this;
         new Metrics(this, 12345); // TODO: 수정
 
         // CONFIG
@@ -30,7 +30,12 @@ public class BoilerPlateMain extends JavaPlugin {
         // TODO: 작성
     }
 
-    public static JavaPlugin getPlugin() {
-        return plugin;
+    public static JavaPlugin getInstance() {
+        return instance;
+    }
+
+    private boolean isPluginEnabled(String name) {
+        Plugin plugin = getServer().getPluginManager().getPlugin(name);
+        return plugin != null && plugin.isEnabled();
     }
 }
