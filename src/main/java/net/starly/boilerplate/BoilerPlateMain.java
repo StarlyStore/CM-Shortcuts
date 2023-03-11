@@ -5,7 +5,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BoilerPlateMain extends JavaPlugin {
-    private static JavaPlugin instance;
+    private static BoilerPlateMain instance;
 
     @Override
     public void onEnable() {
@@ -30,7 +30,7 @@ public class BoilerPlateMain extends JavaPlugin {
         // TODO: 작성
     }
 
-    public static JavaPlugin getInstance() {
+    public static BoilerPlateMain getInstance() {
         return instance;
     }
 
