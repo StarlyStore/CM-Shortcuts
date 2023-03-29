@@ -26,6 +26,6 @@ dependencies {
     compileOnly "net.starly.core:ST-Core:1.6.11"
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
