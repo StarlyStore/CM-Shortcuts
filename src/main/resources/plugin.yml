@@ -1,7 +1,7 @@
 name: ST-BoilerPlate # TODO: 수정
 main: net.starly.boilerplate.BoilerPlateMain # TODO: 수정
 author: Starly Team
-website: http://starly.kr/discord
+website: http://starly.kr/
 
 description: BoilerPlate Plugin. # TODO: 수정
 
