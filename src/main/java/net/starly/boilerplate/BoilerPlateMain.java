@@ -5,7 +5,12 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BoilerPlateMain extends JavaPlugin {
+
     private static BoilerPlateMain instance;
+    public static BoilerPlateMain getInstance() {
+        return instance;
+    }
+
 
     @Override
     public void onEnable() {
@@ -34,10 +39,6 @@ public class BoilerPlateMain extends JavaPlugin {
         /* LISTENER
          ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
         // TODO: 수정
-    }
-
-    public static BoilerPlateMain getInstance() {
-        return instance;
     }
 
     private boolean isPluginEnabled(String name) {
