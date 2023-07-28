@@ -7,9 +7,7 @@ version '1.0'
 
 repositories {
     mavenCentral()
-    maven {
-        url = "https://repo.starly.kr/repository/maven-public/"
-    }
+    maven { url = "https://repo.starly.kr/repository/maven-public/" }
 }
 
 dependencies {

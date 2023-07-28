@@ -1,16 +1,13 @@
 package net.starly.boilerplate;
 
+import lombok.Getter;
 import net.starly.core.bstats.Metrics;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class BoilerPlateMain extends JavaPlugin {
+public class BoilerPlate extends JavaPlugin {
 
-    private static BoilerPlateMain instance;
-    public static BoilerPlateMain getInstance() {
-        return instance;
-    }
-
+    @Getter private static BoilerPlate instance;
 
     @Override
     public void onEnable() {
