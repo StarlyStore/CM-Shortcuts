@@ -1,12 +1,13 @@
-name: ST-BoilerPlate # TODO: 수정
-main: net.starly.boilerplate.BoilerPlateMain # TODO: 수정
+name: CustomMenu-BoilerPlate # TODO: 수정
+main: net.starly.custommenu.boilerplate.BoilerPlate # TODO: 수정
 author: Starly Team
-website: http://starly.kr/
+website: https://starly.kr/
 
-description: BoilerPlate Plugin. # TODO: 수정
+description: CustomMenu-BoilerPlate Plugin. # TODO: 수정
 
 softdepend:
   - ST-Core
+  - ST-CustomMenu
 
 version: 1.0
 api-version: 1.13

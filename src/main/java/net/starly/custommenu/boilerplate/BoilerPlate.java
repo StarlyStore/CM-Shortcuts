@@ -1,4 +1,4 @@
-package net.starly.boilerplate;
+package net.starly.custommenu.boilerplate;
 
 import lombok.Getter;
 import net.starly.core.bstats.Metrics;
@@ -10,20 +10,25 @@ public class BoilerPlate extends JavaPlugin {
     @Getter private static BoilerPlate instance;
 
     @Override
+    public void onLoad() {
+        instance = this;
+    }
+
+    @Override
     public void onEnable() {
         /* DEPENDENCY
          ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
         if (!isPluginEnabled("ST-Core")) {
             getServer().getLogger().warning("[" + getName() + "] ST-Core 플러그인이 적용되지 않았습니다! 플러그인을 비활성화합니다.");
-            getServer().getLogger().warning("[" + getName() + "] 다운로드 링크 : §fhttp://starly.kr/");
+            getServer().getLogger().warning("[" + getName() + "] 다운로드 링크 : §fhttps://starly.kr/");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        } else if (!isPluginEnabled("ST-CustomMenu")) {
+            getServer().getLogger().warning("[" + getName() + "] ST-CustomMenu 플러그인이 적용되지 않았습니다! 플러그인을 비활성화합니다.");
+            getServer().getLogger().warning("[" + getName() + "] 다운로드 링크 : §fhttps://starly.kr/");
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
-
-        /* SETUP
-         ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
-        instance = this;
-        new Metrics(this, 12345); // TODO: 수정
 
         /* CONFIG
          ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
