@@ -18,6 +18,6 @@ public class PlayerSwapHandItemsListener implements Listener {
         String menuId = propertyManager.getProperty("CMSF_DEFAULT_MENU");
         if ("undefined".equals(menuId)) return;
 
-        player.performCommand("/st-custommenu:custom-menu 빠른열기");
+        player.performCommand("st-custommenu:custom-menu 빠른열기");
     }
 }
