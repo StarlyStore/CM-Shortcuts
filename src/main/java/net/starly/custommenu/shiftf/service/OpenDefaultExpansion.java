@@ -60,7 +60,6 @@ public class OpenDefaultExpansion extends CommandExpansion {
         MenuRepository menuRepository = MenuRepository.getInstance();
         Menu menu = menuRepository.getMenu(defaultMenuId);
 
-        player.playSound(player.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1f, 1f);
         MenuGUI.getInstance().openInventory(player, menu);
         return true;
     }
