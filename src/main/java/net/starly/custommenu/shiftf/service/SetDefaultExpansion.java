@@ -53,7 +53,7 @@ public class SetDefaultExpansion extends CommandExpansion {
         GlobalPropertyManager propertyManager = GlobalPropertyManager.getInstance();
         if (menu != null) {
             propertyManager.setProperty("CMSF_DEFAULT_MENU", menu.getId());
-            sender.sendMessage("§a기본 메뉴로 메뉴 " + menu.getId() + "를 지정하였습니다.");
+            sender.sendMessage("§a기본 메뉴로 §6" + menu.getId() + "§a를 지정하였습니다.");
         } else {
             propertyManager.setProperty("CMSF_DEFAULT_MENU", "undefined");
             sender.sendMessage("§a기본 메뉴 설정을 삭제하였습니다.");
