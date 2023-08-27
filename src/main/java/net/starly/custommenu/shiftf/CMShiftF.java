@@ -2,6 +2,10 @@ package net.starly.custommenu.shiftf;
 
 import lombok.Getter;
 import net.starly.custommenu.configuration.GlobalPropertyManager;
+import net.starly.custommenu.expansion.command.registry.CommandExpansionRegistry;
+import net.starly.custommenu.shiftf.listener.PlayerSwapHandItemsListener;
+import net.starly.custommenu.shiftf.service.OpenDefaultExpansion;
+import net.starly.custommenu.shiftf.service.SetDefaultExpansion;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -39,6 +43,13 @@ public class CMShiftF extends JavaPlugin {
 
         /* LISTENER
          ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
+        getServer().getPluginManager().registerEvents(new PlayerSwapHandItemsListener(), this);
+
+        /* EXPANSION
+         ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
+        CommandExpansionRegistry expansionRegistry = CommandExpansionRegistry.getInstance();
+        expansionRegistry.registerExpansion(new OpenDefaultExpansion());
+        expansionRegistry.registerExpansion(new SetDefaultExpansion());
     }
 
     private boolean isPluginEnabled(String name) {
