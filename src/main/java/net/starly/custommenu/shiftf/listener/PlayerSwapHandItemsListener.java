@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerSwapHandItemsEvent;
 public class PlayerSwapHandItemsListener implements Listener {
 
     @EventHandler(priority = EventPriority.NORMAL)
-    public void onSwap(PlayerSwapHandItemsEvent event) {
+    public void onSwapHandItems(PlayerSwapHandItemsEvent event) {
         Player player = event.getPlayer();
         if (!player.isSneaking()) return;
 
