@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'net.starly.custommenu.boilerplate' // TODO 수정
+group 'net.starly.custommenu.shortcuts'
 version '1.0'
 
 repositories {
@@ -21,7 +21,7 @@ dependencies {
 
     // OTHER DEPENDENCIES
     compileOnly "net.starly.core:ST-Core:1.8.1"
-    compileOnly "net.starly.custommenu:ST-CustomMenu:1.1:api"
+    compileOnly files("api/ST-CustomMenu-1.1-api.jar")
 }
 
 tasks.withType(JavaCompile).configureEach {

@@ -1,13 +1,13 @@
-package net.starly.custommenu.boilerplate;
+package net.starly.custommenu.shiftf;
 
 import lombok.Getter;
-import net.starly.core.bstats.Metrics;
+import net.starly.custommenu.configuration.GlobalPropertyManager;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class BoilerPlate extends JavaPlugin {
+public class CMShiftF extends JavaPlugin {
 
-    @Getter private static BoilerPlate instance;
+    @Getter private static CMShiftF instance;
 
     @Override
     public void onLoad() {
@@ -32,15 +32,13 @@ public class BoilerPlate extends JavaPlugin {
 
         /* CONFIG
          ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
-        // TODO: 수정
-
-        /* COMMAND
-         ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
-        // TODO: 수정
+        GlobalPropertyManager propertyManager = GlobalPropertyManager.getInstance();
+        if (propertyManager.getProperty("CMSF_DEFAULT_MENU") == null) {
+            propertyManager.setProperty("CMSF_DEFAULT_MENU", "undefined");
+        }
 
         /* LISTENER
          ──────────────────────────────────────────────────────────────────────────────────────────────────────────────── */
-        // TODO: 수정
     }
 
     private boolean isPluginEnabled(String name) {

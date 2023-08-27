@@ -1,9 +1,9 @@
-name: CustomMenu-BoilerPlate # TODO: 수정
-main: net.starly.custommenu.boilerplate.BoilerPlate # TODO: 수정
+name: CM-ShiftF
+main: net.starly.custommenu.shiftf.CMShiftF
 author: Starly Team
 website: https://starly.kr/
 
-description: CustomMenu-BoilerPlate Plugin. # TODO: 수정
+description: CM-ShiftF Plugin.
 
 softdepend:
   - ST-Core
